@@ -36,10 +36,10 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
-# Для SQLite можна використати DATABASE_URL
-DATABASES = {
-    'default': env.db(),  # Прочитає DATABASE_URL з .env
-}
+# # Для SQLite можна використати DATABASE_URL
+# DATABASES = {
+#     'default': env.db(),  # Прочитає DATABASE_URL з .env
+# }
 
 ALLOWED_HOSTS = []
 
@@ -89,12 +89,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
